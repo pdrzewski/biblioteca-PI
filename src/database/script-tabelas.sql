@@ -54,7 +54,9 @@ create table medida (
 CREATE TABLE arquivo (
 	fk_empresa INT,
 	fk_biblioteca INT,
-	nome VARCHAR(50),
+	proprietario VARCHAR(50),
+	titulo VARCHAR(50),
+	conteudo VARCHAR(500),
 	FOREIGN KEY (fk_empresa) REFERENCES empresa(id),
 	FOREIGN KEY (fk_biblioteca) REFERENCES biblioteca(id),
 	PRIMARY KEY(fk_empresa, fk_biblioteca)
