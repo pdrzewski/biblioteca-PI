@@ -1,6 +1,6 @@
 var database = require("../database/config");
 
-function buscarBibliotecasPorEmpresa(empresaId) {
+function buscarBibliotecaPorEmpresa(empresaId) {
 
   var instrucaoSql = `SELECT * FROM biblioteca b
                       INNER JOIN arquivo a 
@@ -20,6 +20,6 @@ function cadastrar(descricao, endereco) {
 
 
 module.exports = {
-  buscarBibliotecasPorEmpresa,
+  buscarBibliotecaPorEmpresa,
   cadastrar
 }
