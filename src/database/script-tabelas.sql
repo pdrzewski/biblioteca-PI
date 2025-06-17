@@ -6,9 +6,9 @@
 comandos para mysql server
 */
 
-CREATE DATABASE aquatech;
+CREATE DATABASE gatekeepers;
 
-USE aquatech;
+USE gatekeepers;
 
 CREATE TABLE empresa (
 	id INT PRIMARY KEY AUTO_INCREMENT,
@@ -34,29 +34,35 @@ CREATE TABLE aviso (
 	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
 );
 
-create table aquario (
+create table biblioteca (
 /* em nossa regra de negócio, um aquario tem apenas um sensor */
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	descricao VARCHAR(300),
-	fk_empresa INT,
-	FOREIGN KEY (fk_empresa) REFERENCES empresa(id)
+	endereco VARCHAR(100)
 );
 
 /* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
 create table medida (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	dht11_umidade DECIMAL,
 	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
 	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
+	fk_biblioteca INT,
+	FOREIGN KEY (fk_biblioteca) REFERENCES biblioteca(id)
+);
+
+CREATE TABLE arquivo (
+	fk_empresa INT,
+	fk_biblioteca INT,
+	proprietario VARCHAR(50),
+	titulo VARCHAR(50),
+	conteudo VARCHAR(500),
+	FOREIGN KEY (fk_empresa) REFERENCES empresa(id),
+	FOREIGN KEY (fk_biblioteca) REFERENCES biblioteca(id),
+	PRIMARY KEY(fk_empresa, fk_biblioteca)
 );
 
 insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B');
 insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
-insert into aquario (descricao, fk_empresa) values ('Aquário de Estrela-do-mar', 1);
-insert into aquario (descricao, fk_empresa) values ('Aquário de Peixe-dourado', 2);
+insert into biblioteca (descricao) values ('Informações de clientes');
+insert into biblioteca (descricao) values ('Registros de transações');
