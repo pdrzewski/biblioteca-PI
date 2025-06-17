@@ -6,6 +6,7 @@
 comandos para mysql server
 */
 
+DROP DATABASE gatekeepers;
 CREATE DATABASE gatekeepers;
 
 USE gatekeepers;
@@ -66,3 +67,26 @@ insert into empresa (razao_social, codigo_ativacao) values ('Empresa 1', 'ED145B
 insert into empresa (razao_social, codigo_ativacao) values ('Empresa 2', 'A1B2C3');
 insert into biblioteca (descricao) values ('Informações de clientes');
 insert into biblioteca (descricao) values ('Registros de transações');
+
+SELECT * FROM arquivo;
+
+INSERT INTO arquivo (fk_empresa, fk_biblioteca, proprietario, titulo, conteudo) VALUES
+	(1, 1, 'Elias', 'Livro', 'Praça');
+    
+INSERT INTO arquivo (fk_empresa, fk_biblioteca, proprietario, titulo, conteudo) VALUES
+	(2, 2, 'BLA', 'BLE', 'BLI');
+
+INSERT INTO arquivo (fk_empresa, fk_biblioteca, proprietario, titulo, conteudo) VALUES
+	(1, 2, 'BLA', 'BLE', 'BLI');
+    
+SELECT 
+            a.fk_empresa,
+            a.fk_biblioteca,
+            a.proprietario,
+            a.titulo,
+            a.conteudo
+        FROM arquivo a;
+
+SELECT * FROM usuario;
+INSERT INTO usuario (nome, email, senha, fk_empresa) VALUES
+	('aoki', 'aoki@.com', '1234', 1);
