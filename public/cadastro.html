@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -6,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>AquaTech | Cadastro</title>
+  <title>Gatekeepers | Cadastro</title>
 
   <script src="./js/sessao.js"></script>
 
@@ -19,13 +21,10 @@
   <!--header inicio-->
   <div class="header">
     <div class="container">
-      <h1 class="titulo">AquaTech</h1>
+      <h1 class="titulo">Gatekeepers</h1>
       <ul class="navbar">
         <li>
           <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
         </li>
         <li>|</li>
         <li>
@@ -87,10 +86,40 @@
   <!--footer inicio-->
   <div class="footer">
     <div class="container">
-      <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-      <span class="version">v1.0.0</span>
+    
+      <div class="footer-esquerdo">
+        <h4>Integrantes:</h4>
+        <ul>
+          <p>Giovanna Tracinkas</p>
+          <p>Guilherme Aoki</p>
+          <p>Guilherme Barros</p>
+          <p>João Oliveira</p>
+          <p>Pedro Tomaszewski</p>
+          <p>Kauã Medeiros</p>
+        </ul>
+      </div>
+  
+    
+      <div class="footer">
+        <div class="container">
+          <h1>Gatekeepers</h1>
+          <span class="version">v1.0.0</span>
+        </div>
+      </div>
+    
+      <div class="footer-direito">
+        <h4>Mais Informações:</h4>
+        <ul>
+          <a href="index.html">Home</a> <br>
+          <a href="cadastro.html">Cadastro</a> <br>
+          <a href="login.html">Login</a> <br>
+       
+          <li><a href="mailto:gatekeepers@gmail.com">Email: gatekeepers@gmail.com</a></li>
+        </ul>
+      </div>
     </div>
   </div>
+  
   <!--footer fim-->
 </body>
 
@@ -123,7 +152,7 @@
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Mensagem de erro para todos os campos em branco)";
+        "Preencha todos os campos";
 
       finalizarAguardar();
       return false;
@@ -139,7 +168,7 @@
         break;
       } else {
         cardErro.style.display = "block";
-        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
+        mensagem_erro.innerHTML = "Código inválido";
         finalizarAguardar();
       }
     }
