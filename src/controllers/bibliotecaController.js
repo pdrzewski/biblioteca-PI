@@ -1,9 +1,9 @@
-var aquarioModel = require("../models/aquarioModel");
+var bibliotecaModel = require("../models/bibliotecaModel");
 
-function buscarAquariosPorEmpresa(req, res) {
+function buscarBibliotecaPorEmpresa(req, res) {
   var idUsuario = req.params.idUsuario;
 
-  aquarioModel.buscarAquariosPorEmpresa(idUsuario).then((resultado) => {
+  bibliotecaModel.buscarBibliotecaPorEmpresa(idUsuario).then((resultado) => {
     if (resultado.length > 0) {
       res.status(200).json(resultado);
     } else {
@@ -11,7 +11,7 @@ function buscarAquariosPorEmpresa(req, res) {
     }
   }).catch(function (erro) {
     console.log(erro);
-    console.log("Houve um erro ao buscar os aquarios: ", erro.sqlMessage);
+    console.log("Houve um erro ao buscar as bibliotecas: ", erro.sqlMessage);
     res.status(500).json(erro.sqlMessage);
   });
 }
@@ -28,7 +28,7 @@ function cadastrar(req, res) {
   } else {
 
 
-    aquarioModel.cadastrar(descricao, idUsuario)
+    bibliotecaModel.cadastrar(descricao, idUsuario)
       .then((resultado) => {
         res.status(201).json(resultado);
       }
@@ -44,6 +44,6 @@ function cadastrar(req, res) {
 }
 
 module.exports = {
-  buscarAquariosPorEmpresa,
+  buscarBibliotecaPorEmpresa,
   cadastrar
 }
