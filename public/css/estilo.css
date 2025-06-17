@@ -34,7 +34,7 @@ body {
 
 .header a {
   text-decoration: none;
-  color: #e3b062;
+  color: #91E2A8;
 }
 
 .agora {
@@ -47,11 +47,11 @@ body {
   align-items: center;
   justify-content: space-between;
   list-style: none;
-  color: #e3b062;
+  color: #91E2A8;
 }
 
 .titulo {
-  color: #32b9cd;
+  color: #91E2A8;
   width: fit-content;
   font-weight: 500;
 }
@@ -65,7 +65,7 @@ body {
 .banner {
   height: var(--tamanho-banner);
   color: white;
-  background-image: url('../assets/imgs/bg-jelly-fish-para-home.png');
+  background-image: url("../assets/imgs/livraria.jpg") ;
   background-size: cover;
 }
 
@@ -77,8 +77,11 @@ body {
 
 .banner .container p {
   width: 50%;
+  background-color: white;
+  border-radius: 15px;
+  color:black;
   margin: 0;
-  padding: 0;
+  padding: 20px;
   font-size: 36px;
 }
 
@@ -121,7 +124,7 @@ body {
 /* FOOTER */
 
 .footer {
-  background-color: #32b9cd;
+  background-color: #91E2A8;
   height: 150px;
   color: #fff;
   display: flex;
